@@ -553,7 +553,7 @@
      ("--delay=3" "--age=3" "--pos=bottom" "--offset=70" "--outline=5" "--outlinecolour=grey" "--font=-microsoft-verdana-medium-r-normal--10-*-*-*-*-*-*")))
  '(package-selected-packages
    (quote
-     (magit-gh-pulls puppet-mode yaml-mode iedit graphviz-dot-mode pp-c-l cmake-mode ag helm-projectile helm magit avy org-trello markdown-mode gist notmuch php-mode crontab-mode elpy py-isort py-autopep8 cython-mode company-go go-eldoc elisp-slime-nav paredit cparen mic-paren info+ moccur-edit bbdb flx-ido icomplete+ dired+ smex exec-path-from-shell diminish)))
+     (ido-completing-read+ magit-gh-pulls puppet-mode yaml-mode iedit graphviz-dot-mode pp-c-l cmake-mode ag helm-projectile helm magit avy org-trello markdown-mode gist notmuch php-mode crontab-mode elpy py-isort py-autopep8 cython-mode company-go go-eldoc elisp-slime-nav paredit cparen mic-paren info+ moccur-edit bbdb flx-ido icomplete+ dired+ smex exec-path-from-shell diminish)))
  '(paradox-automatically-star nil)
  '(parens-require-spaces t)
  '(partial-completion-mode t)
