@@ -101,7 +101,7 @@
              (file+olp "~/org/inbox.org" "Projects" "Emacs" "Magit" "Tasks")
              "* TODO %?\n  %a")
             ("m" "Mail task" entry (file "~/org/refile.org")
-             "* TODO Treat mail from %:from\n  SCHEDULED: %t\n  group: %:group\n  subject: %:subject\n  %a"
+             "* TODO [mail] \"%:subject\" from %:from\n  DEADLINE: %t\n  group: %:group\n  subject: %:subject\n  %a"
              :prepend t :immediate-finish t)
             ("p" "Phone call" entry (file "~/org/refile.org")
              "* Phone %(bh/phone-call) - %(gjg/bbdb-company) :PHONE:\n%U\n\n%?"
