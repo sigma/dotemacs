@@ -132,6 +132,9 @@
 (use-package helm-projectile
     :ensure t)
 
+(use-package helm-ag
+    :ensure t)
+
 (use-package projectile
     :ensure t
     :config
@@ -143,6 +146,35 @@
 
 (use-package ag
     :ensure t)
+
+(use-package noflet
+    :ensure t)
+
+(use-package boxquote
+    :ensure t)
+
+(use-package multiple-cursors
+    :ensure t)
+
+(use-package dockerfile-mode
+    :ensure t
+    :defer t
+    :mode "\\Dockerfile\\'")
+
+(use-package jinja2-mode
+    :ensure t
+    :defer t
+    :mode "\\.j2\\'")
+
+(add-to-list 'tramp-methods
+             '("vcsh"
+               (tramp-login-program "/usr/local/bin/vcsh")
+               (tramp-login-args
+                (("enter")
+                 ("%h")))
+               (tramp-remote-shell "/bin/sh")
+               (tramp-remote-shell-args
+                ("-c"))))
 
 ;; TODO: empty that file, and remove
 (require 'yh-misc)
