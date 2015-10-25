@@ -72,6 +72,7 @@
 ;; Customizations are in a separate file
 (yh/load-configuration-file "~/.emacs.d/cust.el")
 
+(require 'modes-config)
 (require 'path-config)
 (require 'savehist-config)
 (require 'smex-config)
