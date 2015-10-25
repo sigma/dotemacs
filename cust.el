@@ -282,7 +282,8 @@
  '(gnus-summary-make-false-root (quote dummy))
  '(gnus-summary-mark-below -10000)
  '(gnus-summary-thread-gathering-function (quote gnus-gather-threads-by-references))
- '(gnus-uncacheable-groups nil t)
+ '(gnus-uncacheable-groups nil)
+ '(gnus-update-message-archive-method t)
  '(gnus-use-adaptive-scoring (quote (line)))
  '(gnus-use-correct-string-widths t)
  '(gnus-use-header-prefetch t)
@@ -712,7 +713,7 @@
  '(vc-handled-backends nil)
  '(vc-make-backup-files t)
  '(vc-stay-local t)
- '(visible-bell t)
+ '(visible-bell nil)
  '(wdired-allow-to-change-permissions (quote advanced))
  '(whitespace-style
    (quote
