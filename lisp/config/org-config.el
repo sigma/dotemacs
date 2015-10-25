@@ -41,6 +41,9 @@
         org-log-done '(time note)
         org-agenda-skip-comment-trees nil
         org-agenda-include-all-todo nil
+        org-agenda-skip-scheduled-delay-if-deadline 'post-deadline
+        org-agenda-skip-scheduled-if-deadline-is-shown t
+        org-agenda-skip-deadline-prewarning-if-scheduled nil
         org-agenda-skip-deadline-if-done t
         org-agenda-skip-scheduled-if-done t
         org-reverse-note-order t
