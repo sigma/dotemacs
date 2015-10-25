@@ -86,7 +86,10 @@
             ("vb" "VMware bug group")
             ("vbv" "VMware bug validate" entry
              (file+olp "~/org/inbox.org" "Work" "Bugs" "Validate")
-             "* TODO validate %^{Bug ID: }\n  SCHEDULED: %t\n  https://bugzilla/show_bug.cgi?id=%\\1")
+             "* TODO validate %^{Bug ID}\n  SCHEDULED: %t\n  https://bugzilla/show_bug.cgi?id=%\\1")
+            ("vt" "VMware task" entry
+             (file+olp "~/org/inbox.org" "Work" "Tasks")
+             "* TODO %^{Task}\n  SCHEDULED: %t")
             ("g" "Magit group")
             ("gp" "Magit patch" entry
              (file+olp "~/org/inbox.org" "Projects" "Emacs" "Magit" "Patches")
