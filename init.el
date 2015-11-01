@@ -155,7 +155,9 @@
     :ensure t)
 
 (use-package multiple-cursors
-    :ensure t)
+    :ensure t
+    :config
+    (bind-key "C-+" 'mc/insert-numbers mc/keymap))
 
 (use-package dockerfile-mode
     :ensure t
