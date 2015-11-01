@@ -48,8 +48,10 @@
          (cursor-color . "yellow")
          (font . "Source Code Pro-13"))))
 
-(tool-bar-mode -1)
-(set-scroll-bar-mode nil)
+(when window-system
+  (tool-bar-mode -1)
+  (set-scroll-bar-mode nil))
+
 (menu-bar-mode -1)
 
 (setq-default even-window-heights nil
