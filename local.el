@@ -30,12 +30,5 @@
 (setq message-alternative-emails (rx "yann.hodique@gmail.com"))
 (setq home-directory (getenv "HOME"))
 
-(setenv "GOPATH" "/Users/hodiquey/Projects/go/:/Users/hodiquey/Projects/git/gocode")
-(eval-after-load 'go-mode
-  '(progn
-    (load-file "~/Projects/go/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
-    (load-file "~/Projects/go/src/github.com/dougm/goflymake/go-flymake.el")
-    (load-file "~/Projects/go/src/github.com/golang/lint/misc/emacs/golint.el")))
-
 (provide 'local)
 ;;; local.el ends here

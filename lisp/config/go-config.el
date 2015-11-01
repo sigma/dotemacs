@@ -62,5 +62,26 @@
               (add-hook 'go-mode-hook 'yh/go-mode-hook))
     :ensure t)
 
+(defun load-file-from-gopath (fname)
+  (let ((gopath-items (split-string (getenv "GOPATH") ":")))
+    (loop for prefix in gopath-items
+       if (file-exists-p (concat prefix "/src/" fname))
+         return (load-file (concat prefix "/src/" fname)))))
+
+(defun load-file-from-gopath-or-download (pkg file)
+  (let ((fname (concat pkg "/" file)))
+    (unless (load-file-from-gopath fname)
+      (shell-command (format "go get -u %s" pkg))
+      (load-file-from-gopath fname))))
+
+(eval-after-load 'go-mode
+  '(progn
+    (load-file-from-gopath-or-download
+     "code.google.com/p/go.tools/cmd/oracle" "oracle.el")
+    (load-file-from-gopath-or-download
+     "github.com/dougm/goflymake" "go-flymake.el")
+    (load-file-from-gopath-or-download
+     "github.com/golang/lint" "misc/emacs/golint.el")))
+
 (provide 'go-config)
 ;;; go-config.el ends here
