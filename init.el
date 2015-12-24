@@ -84,6 +84,7 @@
 (require 'org-config)
 (require 'calendar-config)
 ;; (require 'hideshow-config)
+(require 'mc-config)
 (require 'ido-config)
 (require 'bbdb-config)
 (require 'eshell-config)
@@ -108,7 +109,7 @@
 (require 'crontab-config)
 (require 'yasnippet-config)
 (require 'web-config)
-;; (require 'magit-config)
+(require 'magit-config)
 ;; (require 'scratch-config)
 (require 'notmuch-config)
 (require 'gist-config)
@@ -116,15 +117,6 @@
 (require 'trello-config)
 
 (use-package avy
-    :ensure t)
-
-(use-package ido-completing-read+
-    :ensure t)
-
-(use-package magit
-    :ensure t)
-
-(use-package magit-gh-pulls
     :ensure t)
 
 (use-package helm
@@ -153,11 +145,6 @@
 
 (use-package boxquote
     :ensure t)
-
-(use-package multiple-cursors
-    :ensure t
-    :config
-    (bind-key "C-+" 'mc/insert-numbers mc/keymap))
 
 (use-package dockerfile-mode
     :ensure t

@@ -38,26 +38,27 @@
     (define-key org-mode-map (kbd "<C-tab>") nil)
 
     (setq org-agenda-include-diary t
-        org-log-done '(time note)
-        org-agenda-skip-comment-trees nil
-        org-agenda-include-all-todo nil
-        org-agenda-skip-scheduled-delay-if-deadline 'post-deadline
-        org-agenda-skip-scheduled-if-deadline-is-shown t
-        org-agenda-skip-deadline-prewarning-if-scheduled nil
-        org-agenda-skip-deadline-if-done t
-        org-agenda-skip-scheduled-if-done t
-        org-reverse-note-order t
-        org-highest-priority ?A
-        org-default-priority ?C
-        org-lowest-priority ?E
-        org-tags-column -79
-        org-agenda-start-on-weekday nil
-        ;; Use IDO for target completion
-        org-completion-use-ido t
-        ;; Targets include this file and any file contributing to the agenda - up to 5 levels deep
-        org-refile-targets (quote ((org-agenda-files :maxlevel . 5) (nil :maxlevel . 5)))
-        ;; Targets start with the file name - allows creating level 1 tasks
-        org-refile-use-outline-path (quote file))
+          org-log-done '(time note)
+          org-agenda-skip-comment-trees nil
+          org-agenda-include-all-todo nil
+          org-agenda-skip-scheduled-delay-if-deadline 'post-deadline
+          org-agenda-skip-scheduled-if-deadline-is-shown t
+          org-agenda-skip-deadline-prewarning-if-scheduled nil
+          org-agenda-skip-deadline-if-done t
+          org-agenda-skip-scheduled-if-done t
+          org-reverse-note-order t
+          org-highest-priority ?A
+          org-default-priority ?C
+          org-lowest-priority ?E
+          org-tags-column -79
+          org-agenda-start-on-weekday nil
+          ;; Use IDO for ;TODO: arget completion
+          org-completion-use-ido t
+          ;; Targets include this file and any file contributing to the agenda - up to 5 levels deep
+          org-refile-targets (quote ((org-agenda-files :maxlevel . 5) (nil :maxlevel . 5)))
+          ;; Targets start with the file name - allows creating level 1 tasks
+          org-refile-use-outline-path (quote file)
+          org-ellipsis "…")
 
     (setq org-todo-keywords '((sequence "TODO(t)" "STARTED(s!)" "|" "DONE(d!/!)")
                               (sequence "WAITING(w@/!)" "MAYBE(m!)" "|" "CANCELLED(c@/!)")))

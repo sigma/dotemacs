@@ -96,5 +96,8 @@
   (setq ido-enable-flex-matching t)
   (setq ido-use-faces t))
 
+(use-package ido-completing-read+
+    :ensure t)
+
 (provide 'ido-config)
 ;;; ido-config.el ends here
