@@ -387,7 +387,6 @@
  '(imenu-auto-rescan t)
  '(indent-region-mode t)
  '(indent-tabs-mode nil)
- '(inhibit-startup-echo-area-message "hodiquey")
  '(inhibit-startup-screen t)
  '(initial-scratch-message nil)
  '(js2-basic-offset 4)

@@ -166,5 +166,10 @@ is not nil, then in case of no success, this value is returned"
 ;; Provide modes for common config files
 (require 'generic-x)
 
+;; Yes, it's disgusting, but it's a portable way to disable that silly
+;; message
+(put 'inhibit-startup-echo-area-message 'saved-value
+     (setq inhibit-startup-echo-area-message (user-login-name)))
+
 (provide 'patches)
 ;;; patches.el ends here
