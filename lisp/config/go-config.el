@@ -26,29 +26,33 @@
 
 ;;; Code:
 
-(defun load-file-from-gopath (fname)
+(defun yh/find-go-package (pkg)
   (let ((gopath-items (split-string (getenv "GOPATH") ":")))
-    (loop for prefix in gopath-items
-       if (file-exists-p (concat prefix "/src/" fname))
-         return (load-file (concat prefix "/src/" fname)))))
+    (loop for item in gopath-items
+       if (file-exists-p (concat item "/src/" pkg))
+         return (concat item "/src/" pkg))))
 
-(defun load-file-from-gopath-or-download (pkg file)
-  (let ((fname (concat pkg "/" file)))
-    (unless (load-file-from-gopath fname)
-      (shell-command (format "go get -u %s" pkg))
-      (load-file-from-gopath fname))))
+(defun yh/ensure-go-package (pkg)
+  (or (yh/find-go-package pkg)
+      (and (shell-command (format "go get -u %s" pkg))
+           (yh/find-go-package pkg))))
+
+(defun yh/load-file-from-gopath-or-download (pkg file)
+  (let ((path (concat (yh/ensure-go-package pkg)
+                      "/" file)))
+    (when (file-exists-p path)
+      (load-file path))))
 
 (defun yh/go-mode-hook ()
-  ;; Use goimports instead of go-fmt
-  (setq gofmt-command "goimports")
   ;; Call Gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save t)
 
   ;; Customize compile command to run go build
   (if (not (and (stringp compile-command)
+                ;; so that we can have a per-project setting too
                 (string-match "go" compile-command)))
       (set (make-local-variable 'compile-command)
-           "go build -v && go test -v && go vet && golint"))
+           "go build -v && go test -v && go vet && golint && gocyclo -over 15"))
 
   ;; company-go
   (set (make-local-variable 'company-backends) '(company-go))
@@ -57,6 +61,7 @@
   ;; go-eldoc
   (go-eldoc-setup)
 
+  ;; eyes and hands comfort
   (subword-mode 1)
   (glasses-mode 1))
 
@@ -69,11 +74,23 @@
 
 (use-package go-mode
     :config (progn
-              (load-file-from-gopath-or-download
+              ;; needed for gofmt replacement
+              (when
+                  (yh/ensure-go-package "golang.org/x/tools/cmd/goimports")
+                (setq gofmt-command "goimports"))
+
+              ;; needed for company-go
+              (yh/ensure-go-package "github.com/nsf/gocode")
+
+              ;; needed for compilation
+              (yh/ensure-go-package "github.com/sigma/gocyclo")
+
+              ;; external emacs modules
+              (yh/load-file-from-gopath-or-download
                "code.google.com/p/go.tools/cmd/oracle" "oracle.el")
-              (load-file-from-gopath-or-download
+              (yh/load-file-from-gopath-or-download
                "github.com/dougm/goflymake" "go-flymake.el")
-              (load-file-from-gopath-or-download
+              (yh/load-file-from-gopath-or-download
                "github.com/golang/lint" "misc/emacs/golint.el")
 
               (bind-key "M-." 'godef-jump go-mode-map)
