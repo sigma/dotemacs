@@ -36,8 +36,8 @@
   (when (require 'preview nil t)
     (LaTeX-preview-setup)))
 
-(use-package auctex
-    :ensure t
+(use-package tex-site
+    :ensure auctex
     :defer t
     :config
     ;; reftex helps managing references, toc, ...
