@@ -52,7 +52,7 @@
                 ;; so that we can have a per-project setting too
                 (string-match "go" compile-command)))
       (set (make-local-variable 'compile-command)
-           "go build -v && go test -v && go vet && golint && gocyclo -over 15"))
+           "go build -v && go test -v && go vet && golint && gocyclo -over 15 ."))
 
   ;; company-go
   (set (make-local-variable 'company-backends) '(company-go))
