@@ -171,5 +171,8 @@ is not nil, then in case of no success, this value is returned"
 (put 'inhibit-startup-echo-area-message 'saved-value
      (setq inhibit-startup-echo-area-message (user-login-name)))
 
+(setq mac-option-modifier 'meta
+      mac-command-modifier 'super)
+
 (provide 'patches)
 ;;; patches.el ends here
