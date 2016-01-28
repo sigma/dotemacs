@@ -96,7 +96,7 @@ frame, close it. Else, die"
 
 (global-set-key (kbd "C-x C-c") 'exit-no-gnuserv-or-frame)
 (global-set-key (kbd "C-x 5 3") 'make-main-frame)
-(global-set-key (kbd "C-c d") 'diff-buffer-with-associated-file)
+(global-set-key (kbd "C-c D") 'diff-buffer-with-associated-file)
 (global-set-key (kbd "C-x k") 'de-context-kill)
 (global-set-key (kbd "C-x K")
                 (lambda () (interactive)

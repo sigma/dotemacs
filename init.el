@@ -156,6 +156,11 @@
     :defer t
     :mode "\\.j2\\'")
 
+(use-package dash-at-point
+    :ensure t
+    :defer t
+    :bind ("C-c d" . dash-at-point))
+
 (add-to-list 'tramp-methods
              '("vcsh"
                (tramp-login-program "/usr/local/bin/vcsh")
