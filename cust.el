@@ -53,7 +53,6 @@
  '(bookmark-save-flag 0)
  '(browse-url-netscape-program "mozilla-firefox")
  '(c++-font-lock-extra-types (quote ("Q[a-zA-Z]*" "uint" "ulong" "string")))
- '(c-default-style (quote ((java-mode . "java") (other . "personal"))))
  '(calendar-mark-diary-entries-flag t)
  '(calendar-view-diary-initially-flag t)
  '(calendar-week-start-day 1)
