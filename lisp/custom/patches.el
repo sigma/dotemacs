@@ -172,7 +172,9 @@ is not nil, then in case of no success, this value is returned"
      (setq inhibit-startup-echo-area-message (user-login-name)))
 
 (setq mac-option-modifier 'meta
-      mac-command-modifier 'super)
+      mac-command-modifier 'super
+      mac-right-option-modifier nil
+      mac-right-command-modifier 'alt)
 
 (provide 'patches)
 ;;; patches.el ends here
