@@ -87,12 +87,12 @@
   (glasses-mode 1)
   (subword-mode 1)
 
-  (py-autopep8-enable-on-save)
-
   (add-hook 'before-save-hook 'py-isort-before-save nil t)
+  (add-hook 'before-save-hook 'elpy-format-code nil t)
   (add-hook 'before-save-hook 'delete-trailing-whitespace nil t))
 
 (use-package elpy
+    :pin elpy
     :ensure t
     :config
     (elpy-enable)
