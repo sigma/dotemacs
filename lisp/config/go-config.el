@@ -87,7 +87,7 @@
 
               ;; external emacs modules
               (yh/load-file-from-gopath-or-download
-               "code.google.com/p/go.tools/cmd/oracle" "oracle.el")
+               "golang.org/x/tools/cmd/guru" "go-guru.el")
               (yh/load-file-from-gopath-or-download
                "github.com/dougm/goflymake" "go-flymake.el")
               (yh/load-file-from-gopath-or-download
