@@ -30,8 +30,10 @@
     (when (memq window-system '(mac ns))
       (exec-path-from-shell-initialize)
 
-      (exec-path-from-shell-copy-env "PYTHONPATH")
-      (exec-path-from-shell-copy-env "GOPATH")))
+      (exec-path-from-shell-copy-envs
+       '("PYTHONPATH" "GOPATH"
+         "SSH_AUTH_SOCK" "SSH_AGENT_PID"
+         "GPG_AGENT_INFO"))))
 
 (provide 'path-config)
 ;;; path-config.el ends here
