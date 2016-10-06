@@ -128,6 +128,12 @@
 (use-package helm-ag
     :ensure t)
 
+(use-package helm-pt
+    :ensure t
+    :config
+    (eval-after-load "projectile"
+      '(define-key projectile-command-map (kbd "s p") #'helm-projectile-pt)))
+
 (use-package projectile
     :ensure t
     :config
