@@ -111,7 +111,7 @@
             ("n" "Note" entry (file+headline "~/org/inbox.org" "Notes") "* %? :NOTE:\n  %u\n  %a" :prepend t)))
 
     ;; Resume clocking tasks when emacs is restarted
-    (setq org-clock-persistence-insinuate)
+    (setq org-clock-persistence-insinuate t)
     ;; Yes it's long... but more is better ;)
     (setq org-clock-history-length 35)
     ;; Resume clocking task on clock-in if the clock is open
