@@ -650,7 +650,7 @@
  '(search-whitespace-regexp "[ 	
 ]+")
  '(select-active-regions (quote only))
- '(select-enable-clipboard nil)
+ '(select-enable-clipboard t)
  '(semantic-idle-scheduler-max-buffer-size 102400)
  '(server-use-tcp nil)
  '(set-mark-command-repeat-pop t)
