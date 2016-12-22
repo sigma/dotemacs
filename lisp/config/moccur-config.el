@@ -33,6 +33,10 @@
 (use-package moccur
     :bind ("C-c o" . moccur))
 
+(use-package color-moccur
+    :config (unless window-system
+              (define-key isearch-mode-map (kbd "M-O") nil)))
+
 (use-package moccur-edit
     :ensure t)
 
